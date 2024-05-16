@@ -1,11 +1,9 @@
 console.log("New File Loaded");
 
 const data = {
-    name:'Dipish',
-    age:19
+    name: 'Mayank',
+    age: 19
 }
 
 
-module.exports = {
-    data
-}
+module.exports = data;
