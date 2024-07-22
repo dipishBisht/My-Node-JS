@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "Aurora",
+    "email": "arabb0@edublogs.org",
+    "gender": "Female",
+    "ipAddress": "127.171.138.157"
+  },
+  {
+    "id": 2,
+    "name": "Joellen",
+    "email": "jbouttell1@sbwire.com",
+    "gender": "Female",
+    "ipAddress": "45.79.58.42"
+  },
+  {
+    "id": 3,
+    "name": "Jesselyn",
+    "email": "jivanitsa2@feedburner.com",
+    "gender": "Female",
+    "ipAddress": "85.213.51.124"
+  },
+  {
+    "id": 4,
+    "name": "Noemi",
+    "email": "nverdun3@cargocollective.com",
+    "gender": "Female",
+    "ipAddress": "204.244.56.179"
+  },
+  {
+    "id": 5,
+    "name": "Hattie",
+    "email": "hdelazenne4@msu.edu",
+    "gender": "Female",
+    "ipAddress": "154.114.158.113"
+  },
+  {
+    "id": 6,
+    "name": "Trenna",
+    "email": "ttidgewell5@bbb.org",
+    "gender": "Female",
+    "ipAddress": "254.204.12.220"
+  },
+  {
+    "id": 7,
+    "name": "Garnet",
+    "email": "gferrettini6@businessweek.com",
+    "gender": "Female",
+    "ipAddress": "23.234.124.148"
+  }
+]
