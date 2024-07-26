@@ -1,6 +1,5 @@
 const express = require("express");
 const fs = require("fs");
-const _ = require("lodash")
 
 const app = express();
 
