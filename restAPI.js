@@ -16,17 +16,17 @@ app.get("/users", (req, res) => {
     res.send(data)
 })
 
-app.get("/api/users", (req, res) => {
-    res.send(mockData)
-})
-
-app.post("/api/users", (req, res) => {
-    const body = req.body
-    mockData.push({ id: mockData.length + 1, ...body });
-    fs.writeFile("mockData2.json", JSON.stringify(mockData), (err, data) => {
-        return res.json({ status: "sucess", id: mockData.length })
-    });
-})
+app.route("/api/users")
+    .get((req, res) => {
+        res.send(mockData);
+    })
+    .post((req, res) => {
+        const body = req.body;
+        mockData.push({ id: mockData.length + 1, ...body });
+        fs.writeFile("mockData2.json", JSON.stringify(mockData), (err, data) => {
+            return res.json({ status: "sucess", id: mockData.length });
+        });
+    })
 
 app.route("/api/users/:id")
     .get((req, res) => {
