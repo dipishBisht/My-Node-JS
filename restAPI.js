@@ -74,6 +74,7 @@ app.route("/api/users/:id")
         const id = Number(req.params.id);
         const filtered = mockData.filter((users) => id !== users.id);
         fs.writeFile("mockData2.json", JSON.stringify(filtered), (ee, data) => {
+            if (ee) return res.json({ status: "error", message: "data not updated" })
             return res.json({ status: "sucess", id: id })
         })
     });
