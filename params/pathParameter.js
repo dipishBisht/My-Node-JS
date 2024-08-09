@@ -1,11 +1,11 @@
 const express = require("express");
 const fs = require("fs");
-const _ = require("lodash")
+const _ = require("lodash");
 
 const app = express();
 
 
-const data = JSON.parse(fs.readFileSync("mockData.json", "utf-8"));
+const data = JSON.parse(fs.readFileSync("../json/mockData.json", "utf-8"));
 
 app.get("/", (req, res) => {
     res.send("You are in the Home Page")

@@ -3,7 +3,7 @@ const fs = require("fs");
 
 const app = express();
 
-const mockData = JSON.parse(fs.readFileSync("mockData2.json", "utf-8"));
+const mockData = JSON.parse(fs.readFileSync("../json/mockData2.json", "utf-8"));
 
 app.use(express.urlencoded({ extended: false }));
 
@@ -23,7 +23,7 @@ app.route("/api/users")
     .post((req, res) => {
         const body = req.body;
         mockData.push({ id: mockData.length + 1, ...body });
-        fs.writeFile("mockData2.json", JSON.stringify(mockData), (err, data) => {
+        fs.writeFile("../json/mockData2.json", JSON.stringify(mockData), (err, data) => {
             return res.json({ status: "sucess", id: mockData.length });
         });
     })
@@ -44,7 +44,7 @@ app.route("/api/users/:id")
         if (user) {
             Object.assign(user, updatedData);
 
-            fs.writeFile("mockData2.json", JSON.stringify(mockData), (err) => {
+            fs.writeFile("../json/mockData2.json", JSON.stringify(mockData), (err) => {
                 if (err) {
                     return res.status(500).json({ status: "error", message: "Failed to update data" });
                 }
@@ -63,7 +63,7 @@ app.route("/api/users/:id")
 
         const updatedData = { ...mockData[user], ...body }
         mockData[user] = updatedData;
-        fs.writeFile("mockData2.json", JSON.stringify(mockData), (err) => {
+        fs.writeFile("../json/mockData2.json", JSON.stringify(mockData), (err) => {
             if (err)
                 return res.status(500).json({ status: "error", message: "Failed to update data" });
 
@@ -73,7 +73,7 @@ app.route("/api/users/:id")
     .delete((req, res) => {
         const id = Number(req.params.id);
         const filtered = mockData.filter((users) => id !== users.id);
-        fs.writeFile("mockData2.json", JSON.stringify(filtered), (ee, data) => {
+        fs.writeFile("../json/mockData2.json", JSON.stringify(filtered), (ee, data) => {
             if (ee) return res.json({ status: "error", message: "data not updated" })
             return res.json({ status: "sucess", id: id })
         })

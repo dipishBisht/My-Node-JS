@@ -18,7 +18,7 @@ const server = http.createServer((req, res) => {
         req.on('end', () => {
             const daString = Buffer.concat(body).toString();
             const name = daString.replaceAll('message=', '').split('&');
-            fs.writeFile("data.json", JSON.stringify({ "firstName": name[0], "lastName": name[1] }), (err) => {
+            fs.writeFile("../json/data.json", JSON.stringify({ "firstName": name[0], "lastName": name[1] }), (err) => {
                 if (err) {
                     console.log("Error", err);
                     res.statusCode = 500;

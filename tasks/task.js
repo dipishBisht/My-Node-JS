@@ -24,14 +24,14 @@ app.get("/contact", (req, res) => {
 app.post("/contact/userdata", (req, res) => {
     const { first_name, last_name, email, message } = req.body
     const userData = { first_name, last_name, email, message }
-    const allData = JSON.parse(fs.readFileSync("formData.json", "utf-8"))
+    const allData = JSON.parse(fs.readFileSync("../json/formData.json", "utf-8"))
     if (allData) {
         allData.push(userData);
-        fs.writeFileSync("formData.json", JSON.stringify(allData))
+        fs.writeFileSync("../json/formData.json", JSON.stringify(allData))
         res.send("Data Send")
     }
     else {
-        fs.writeFileSync("formData.json", JSON.stringify([userData]));
+        fs.writeFileSync("../json/formData.json", JSON.stringify([userData]));
     }
     res.send("Response Send")
 });
