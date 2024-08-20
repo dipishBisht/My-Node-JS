@@ -7,6 +7,8 @@ app.get("/", query('name').notEmpty().escape(), (req, res) => {
     if (result.isEmpty()) {
         const data = matchedData(req);
         console.log(data);
+        console.log("Yuvraj *******");
+        
         return res.send(`Hello, ${data.name}!`);
     }
 
